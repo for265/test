@@ -24,7 +24,8 @@
           await cheerpjInit({
             clipboardMode: "system",
             enableInputMethods: true,
-            // workerUrl removed as standard GitHub Pages setup doesn't need it
+            // Point this to the file you just uploaded to your repo
+            workerUrl: window.location.origin + "/c.html",
           });
 
           // Create the game display
