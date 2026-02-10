@@ -3,16 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>My Java Game</title>
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
     <style>
       * { margin: 0; padding: 0; }
-      body { 
-        background: #000; 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        height: 100vh; 
-        overflow: hidden;
-      }
+      body { background: #000; }
     </style>
   </head>
   <body>
@@ -20,25 +15,15 @@
     <script>
       window.onload = async function() {
         try {
-          // Initialize CheerpJ
           await cheerpjInit({
             clipboardMode: "system",
             enableInputMethods: true,
-            // workerUrl removed as standard GitHub Pages setup doesn't need it
+            workerUrl: window.location.origin + "/c.html",
           });
-
-          // Create the game display
-          // Adjust width/height as needed for your game
           cheerpjCreateDisplay(768, 432, document.body);
-
-          // IMPORTANT: We run the .data file as a Jar. 
-          // Ensure "untitled-game.data" is in the same folder as this index.html
-          await cheerpjRunJar("/app/untitled-game.jar");
-
+          await cheerpjRunJar("/app/untitled-game.data");
         } catch(e) {
           console.error("FATAL: " + e.message);
-          // Simple on-screen error reporting for debugging
-          document.body.innerHTML = "<div style='color:white; padding:20px;'>Error: " + e.message + "</div>";
         }
       };
     </script>
