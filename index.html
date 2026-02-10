@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My Java Game</title>
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+    <style>
+      * { margin: 0; padding: 0; }
+      body { background: #000; }
+    </style>
+  </head>
+  <body>
+    <script src="https://cjrtnc.leaningtech.com/4.2/loader.js"></script>
+    <script>
+      window.onload = async function() {
+        try {
+          await cheerpjInit({
+            clipboardMode: "system",
+            enableInputMethods: true,
+            workerUrl: "./c.html",
+          });
+          await cheerpjRunJar("/app/untitled-game.data");
+        } catch(e) {
+          console.error("FATAL: " + e.message);
+        }
+      };
+    </script>
+  </body>
+</html>
