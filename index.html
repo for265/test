@@ -30,7 +30,15 @@
 
           // Create the game display
           // Adjust width/height as needed for your game
-          cheerpjCreateDisplay(768, 432, document.body);
+          function resizeDisplay() {
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+            cheerpjCreateDisplay(w, h, document.body);
+          }
+
+          resizeDisplay();
+          window.addEventListener("resize", resizeDisplay);
+
 
           // IMPORTANT: We run the .data file as a Jar. 
           // Ensure "untitled-game.data" is in the same folder as this index.html
