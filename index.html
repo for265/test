@@ -17,20 +17,39 @@
   </head>
   <body>
   <div id="game-description" style="
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      color: white;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 15px;
-      border-radius: 8px;
-      font-family: sans-serif;
-      z-index: 9999;
-      max-width: 300px;
-      pointer-events: none;
-    ">
-    <h2 style="margin-bottom: 5px;">calnder</h2>
-    <p>WASD to move, E to interact, you need to eat food from the firgde at the table, and avoid greg.</p>
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+        border-radius: 8px;
+        font-family: sans-serif;
+        z-index: 9999;
+        max-width: 300px;
+        border: 1px solid #444;
+        text-shadow: 1px 1px 2px black;
+        pointer-events: auto;
+      ">
+      <span
+              onclick="this.parentElement.style.display='none'"
+              style="
+          position: absolute;
+          top: 5px;
+          right: 10px;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 1.2em;
+          color: #aaa;
+        "
+              onmouseover="this.style.color='white'"
+              onmouseout="this.style.color='#aaa'"
+      >×</span>
+    <h2 style="margin-bottom: 5px; padding-right: 20px;">Calnder</h2>
+    <p style="font-size: 0.9em; line-height: 1.4;">
+      <strong>WASD</strong> to move, <strong>E</strong> to interact.<br><br>
+      Eat food from the fridge at the table and <strong>avoid Greg</strong>.
+    </p>
   </div>
 
   <script src="https://cjrtnc.leaningtech.com/4.2/loader.js"></script>
