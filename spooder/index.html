@@ -61,7 +61,7 @@
             clipboardMode: "system",
             enableInputMethods: true,
             // Point this to the file you just uploaded to your repo
-            workerUrl: "/c.html",
+            workerUrl: "./c.html",
           });
 
           // Create the game display
@@ -78,7 +78,7 @@
 
           // IMPORTANT: We run the .data file as a Jar. 
           // Ensure "untitled-game.data" is in the same folder as this index.html
-          await cheerpjRunJar("/app/spooder.jar");
+          await cheerpjRunJar("./app/spooder.jar");
 
         } catch(e) {
           console.error("FATAL: " + e.message);
