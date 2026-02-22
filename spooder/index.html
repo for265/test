@@ -61,7 +61,7 @@
             clipboardMode: "system",
             enableInputMethods: true,
 
-            workerUrl: "c.html",
+            workerUrl: "/spooder/c.html",
           });
 
           function resizeDisplay() {
@@ -73,8 +73,7 @@
           resizeDisplay();
           window.addEventListener("resize", resizeDisplay);
 
-          await cheerpjRunJar("spooder.jar");
-
+          await cheerpjRunJar("/app/spooder/spooder.jar");
         } catch(e) {
           console.error("FATAL: " + e.message);
           // Simple on-screen error reporting for debugging
